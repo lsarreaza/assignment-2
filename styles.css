@@ -53,11 +53,12 @@ a {
 }
 
 .hero {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 40px;
+	display: flex;
 	align-items: center;
+	justify-content: center;
+	min-height: 460px;
 	padding: 70px 0;
+	background: url("images/ univpic.jpg") center / cover;
 }
 
 h1,
@@ -70,9 +71,13 @@ h1 {
 	font-size: 3.5rem;
 }
 
-.hero img {
-	width: 100%;
-	border-radius: 12px;
+.hero>div {
+	max-width: 620px;
+	padding: 28px;
+	text-align: center;
+	border-radius: 8px;
+	background: rgba(247, 245, 239, 0.9);
+	box-shadow: 0 4px 14px rgba(36, 53, 45, 0.2);
 }
 
 .button {
@@ -222,3 +227,32 @@ footer nav {
 	flex: 1 1 220px;
 }
 
+@media (max-width: 850px) {
+	.event-layout {
+		grid-template-columns: minmax(0, 1.5fr) minmax(210px, 1fr);
+		gap: 20px;
+	}
+
+	.hero {
+		min-height: 400px;
+	}
+}
+
+@media (max-width: 650px) {
+	header {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	header nav ul {
+		justify-content: flex-start;
+	}
+
+	.event-layout {
+		grid-template-columns: 1fr;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+	}
+}
